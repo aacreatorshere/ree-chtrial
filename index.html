@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ree'ch Brand Agency</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Great+Vibes&family=Outfit:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&display=swap');
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .font-editorial {
+      font-family: 'Bodoni Moda', serif;
+    }
+
+    .font-script {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .drop-shadow-3d {
+      text-shadow: 4px 4px 0px #D891A8, 8px 8px 0px #f4f0e4, 12px 12px 0px #334a38;
+    }
+
+    .drop-shadow-3d-small {
+      text-shadow: 3px 3px 0px #D891A8, 6px 6px 0px #334a38;
+    }
+
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    .animate-spin-slow {
+      animation: spin 8s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+
+    @keyframes blob {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-6deg) scale(1); }
+      50% { transform: rotate(6deg) scale(1.05); }
+    }
+
+    .animate-wiggle {
+      animation: wiggle 2.5s ease-in-out infinite;
+    }
+
+    .animate-marquee {
+      animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f4f0e4;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334a38;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D891A8;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#f4f0e4] text-[#334a38] overflow-x-hidden selection:bg-[#D891A8] selection:text-[#334a38] relative">
+
+  <!-- Loading Screen -->
+  <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#f4f0e4] transition-opacity duration-500">
+    <div class="relative animate-bounce mb-4">
+      <i data-lucide="sparkles" class="w-12 h-12 text-[#D891A8]"></i>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-medium tracking-tight text-[#334a38]" style="font-family: 'Outfit', sans-serif;">
+      Vibe Check...
+    </h1>
+    <p class="text-[#D891A8] mt-2 font-medium tracking-wide animate-pulse">Entering Ree'ch</p>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-40 px-4 md:px-6 pt-4 md:pt-6 pb-2 transition-all duration-300 bg-[#f4f0e4]">
+    <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+      <!-- Logo -->
+      <div class="text-2xl md:text-3xl font-black uppercase tracking-tighter text-[#334a38] cursor-pointer shrink-0" onclick="switchPage('home')">Ree'ch</div>
+      
+      <!-- Nav Links & CTA -->
+      <!-- Added pb-2 pr-2 to prevent the pink shadow from being cut off by the overflow container -->
+      <div class="flex items-center justify-end gap-2 md:gap-4 overflow-x-auto pb-2 pr-2 pt-1" style="scrollbar-width: none;">
+        <button onclick="switchPage('home')" class="bg-[#334a38] text-[#f4f0e4] px-5 py-2.5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-all duration-300 shadow-[3px_3px_0px_#D891A8] hover:shadow-[1px_1px_0px_#D891A8] hover:translate-y-[2px] hover:translate-x-[2px] focus:outline-none whitespace-nowrap">
+          Home
+        </button>
+        <button onclick="switchPage('about')" class="bg-[#334a38] text-[#f4f0e4] px-5 py-2.5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-all duration-300 shadow-[3px_3px_0px_#D891A8] hover:shadow-[1px_1px_0px_#D891A8] hover:translate-y-[2px] hover:translate-x-[2px] focus:outline-none whitespace-nowrap">
+          About
+        </button>
+        <button onclick="scrollToServices()" class="bg-[#334a38] text-[#f4f0e4] px-5 py-2.5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-all duration-300 shadow-[3px_3px_0px_#D891A8] hover:shadow-[1px_1px_0px_#D891A8] hover:translate-y-[2px] hover:translate-x-[2px] focus:outline-none whitespace-nowrap">
+          Services
+        </button>
+        <button onclick="scrollToContact()" class="bg-[#334a38] text-[#f4f0e4] px-5 py-2.5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-all duration-300 shadow-[3px_3px_0px_#D891A8] hover:shadow-[1px_1px_0px_#D891A8] hover:translate-y-[2px] hover:translate-x-[2px] focus:outline-none whitespace-nowrap">
+          Slay With Us
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================== HOME PAGE VIEW ======================== -->
+  <main id="home-page" class="block">
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center pt-36 pb-16 overflow-hidden bg-[#f4f0e4]">
+      <!-- Animated Background Blobs -->
+      <div class="absolute top-20 left-10 w-72 h-72 bg-[#D891A8] rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+      <div class="absolute top-40 right-10 w-72 h-72 bg-[#334a38] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute -bottom-8 left-40 w-72 h-72 bg-[#D891A8] rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+
+      <div class="relative z-10 max-w-[90rem] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 lg:gap-8 py-10 lg:py-16 w-full mt-8 md:mt-12">
+        
+        <!-- Left Column: Text -->
+        <div class="flex flex-col items-start text-left space-y-4 relative z-20 md:w-[55%] shrink-0">
+          <h1 class="text-[5rem] md:text-[6.5rem] lg:text-[8.5rem] xl:text-[10rem] font-black uppercase tracking-tighter leading-[0.8] text-[#334a38] relative z-10 w-full">
+            BRANDS THAT <br>
+            <span class="text-[#D891A8] font-script lowercase tracking-normal text-[6.5rem] md:text-[8.5rem] lg:text-[11.5rem] xl:text-[13.5rem] drop-shadow-md block mt-2 md:-mt-6 lg:-mt-8 relative z-20">hit different.</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl lg:text-3xl max-w-2xl font-medium text-[#334a38]/80 mt-16 md:mt-24 lg:mt-32 mb-8 leading-relaxed relative z-30">
+            Trends switch. <span class="text-[#334a38] font-bold">Positioning slays.</span> <br class="hidden md:block">
+            We don’t chase hype. We build perception.
+          </p>
+
+          <button onclick="scrollToContact()" class="flex items-center gap-3 bg-[#334a38] text-[#f4f0e4] px-10 py-5 rounded-full font-bold text-lg lg:text-xl uppercase tracking-wider hover:bg-[#D891A8] hover:text-[#334a38] transition-all duration-300 shadow-[8px_8px_0px_#D891A8] hover:shadow-[4px_4px_0px_#D891A8] hover:translate-y-1">
+            Start Building <i data-lucide="arrow-right" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+        <!-- Right Column: Aesthetic Oval Avatar Placeholder -->
+        <div class="relative w-full md:w-[45%] flex justify-center md:justify-center items-center mt-20 md:mt-0 float-animation group cursor-pointer z-10 lg:-ml-8">
+          
+          <!-- GenZ Dialogue Box -->
+          <div class="absolute -right-2 top-4 md:right-0 md:top-12 lg:-right-4 lg:top-24 bg-[#f4f0e4] border-2 border-[#334a38] text-[#334a38] px-4 py-2 rounded-2xl rounded-bl-none font-bold text-sm shadow-[4px_4px_0px_#D891A8] z-30 animate-wiggle">
+            main character energy ✨
+          </div>
+
+          <div class="relative w-72 h-[420px] md:w-[22rem] md:h-[32rem] lg:w-[26rem] lg:h-[38rem] xl:w-[30rem] xl:h-[44rem] rounded-full bg-gradient-to-br from-[#D891A8]/40 to-[#f4f0e4]/10 shadow-[20px_20px_0px_#334a38] border-2 border-[#D891A8] flex flex-col items-center justify-center overflow-hidden transition-transform duration-500 hover:scale-[1.02] backdrop-blur-sm">
+             <div class="absolute inset-0 bg-white opacity-20 rotate-45 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+             <i data-lucide="star" class="w-12 h-12 text-[#334a38] mb-4 opacity-50"></i>
+             <span class="text-sm md:text-base font-bold text-[#334a38]/80 uppercase tracking-widest text-center px-8 font-serif italic">
+               [ Insert 3D Avatar ]
+            </span>
+          </div>
+          <!-- Decorative sparkles around oval -->
+          <i data-lucide="sparkles" class="absolute -top-6 right-12 lg:right-4 w-14 h-14 text-[#D891A8] animate-spin-slow"></i>
+          <i data-lucide="star" class="absolute -bottom-4 left-16 lg:left-8 w-10 h-10 text-[#334a38] animate-bounce"></i>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Marquee Banner - ORIGINAL PINK KEPT HERE -->
+    <div class="bg-[#f6c2d0] text-[#334a38] py-6 flex overflow-hidden whitespace-nowrap transform -rotate-2 scale-105 z-20 relative shadow-xl">
+      <div class="animate-marquee flex gap-8 items-center font-black uppercase tracking-widest text-xl md:text-2xl">
+        <span>Hype fades. Perception stays.</span>
+        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+        <span>Not just on the feed. In culture.</span>
+        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+        <span>Hype fades. Perception stays.</span>
+        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+        <span>Not just on the feed. In culture.</span>
+        <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+      </div>
+    </div>
+
+    <!-- About Section (The Tea) -->
+    <section class="py-24 px-6 bg-[#334a38] text-[#f4f0e4] relative rounded-t-[3rem] -mt-6 z-10 shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-sm font-bold tracking-widest uppercase text-[#D891A8] mb-4">The Tea ☕</h2>
+          <h3 class="text-5xl md:text-7xl font-black leading-none mb-8">
+            Where culture meets <span class="text-[#D891A8] italic font-serif lowercase">intention.</span>
+          </h3>
+        </div>
+        <div class="text-lg md:text-xl font-medium leading-relaxed text-[#f4f0e4]/90 space-y-6">
+          <p>
+            We’re an influencer marketing and brand strategy agency built for brands that want more than attention. <strong class="text-white">They want perception.</strong>
+          </p>
+          <p>
+            In today’s scroll-heavy world, content is easy. Impact isn’t. We focus on narrative, positioning, and moments that feel natural - never forced.
+          </p>
+          <p class="text-[#D891A8] font-bold text-2xl pt-4">
+            Because brands that try too hard fade. <br>Brands that stand firm? They stay iconic.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 px-6 bg-[#f4f0e4] relative overflow-hidden">
+      
+      <!-- Decorative Background Blobs -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-[#D891A8] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob pointer-events-none"></div>
+      <div class="absolute bottom-20 left-0 w-80 h-80 bg-[#334a38] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000 pointer-events-none"></div>
+
+      <!-- Floating Star Background -->
+      <i data-lucide="star" class="absolute bottom-40 right-10 md:right-32 w-12 h-12 text-[#334a38] float-animation opacity-50 pointer-events-none" style="animation-delay: 2s;"></i>
+
+      <div class="max-w-4xl mx-auto relative z-10">
+        <div class="text-center mb-20 flex flex-col items-center">
+          
+          <div class="relative inline-block mt-12 md:mt-20 mb-4 md:mb-8">
+            <!-- Sparkle Icon -->
+            <i data-lucide="sparkles" class="absolute -top-6 -left-12 md:-top-8 md:-left-32 lg:-left-44 w-10 h-10 md:w-16 md:h-16 text-[#D891A8] float-animation pointer-events-none"></i>
+            
+            <!-- Wiggling Dialogue Box -->
+            <div class="absolute bottom-2 md:bottom-8 -left-20 md:-left-48 lg:-left-60 bg-[#f4f0e4] border-[3px] border-[#334a38] text-[#334a38] px-4 py-2 md:px-6 md:py-3 rounded-3xl rounded-bl-none font-bold text-sm md:text-lg shadow-[4px_4px_0px_#D891A8] md:shadow-[6px_6px_0px_#D891A8] z-30 animate-wiggle transform -rotate-6 whitespace-nowrap">
+              literally this 👇
+            </div>
+
+            <!-- Spinning Sticker -->
+            <div class="absolute -top-10 md:-top-16 -right-20 md:-right-40 lg:-right-48 bg-[#D891A8] text-[#334a38] border-[3px] border-[#334a38] rounded-full w-24 h-24 md:w-36 md:h-36 lg:w-40 lg:h-40 flex items-center justify-center font-black uppercase text-center shadow-[6px_6px_0px_#334a38] animate-spin-slow z-20 text-xs md:text-sm p-2">
+              The<br>Blueprint
+            </div>
+
+            <h2 class="text-7xl md:text-[7rem] lg:text-[8.5rem] font-black tracking-tighter text-[#334a38] relative z-10 leading-none">Our magic</h2>
+          </div>
+          
+          <p class="text-xl md:text-2xl font-serif italic text-[#334a38]/80 mt-6 max-w-2xl relative z-10">We don’t just “execute campaigns.” We engineer brand presence.</p>
+        </div>
+
+        <div class="space-y-6" id="services-container">
+          
+          <!-- Service 1 -->
+          <div class="service-item border-4 border-[#334a38] rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer bg-[#f4f0e4] hover:bg-[#D891A8] shadow-[6px_6px_0px_#334a38]" data-active="false">
+            <div class="p-6 md:p-8 flex justify-between items-center">
+              <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide w-4/5">Creative PR Architecture</h3>
+              <div class="icon-container w-10 h-10 rounded-full flex items-center justify-center border-2 transition-transform duration-300 border-[#334a38]">
+                <i data-lucide="sparkles" class="w-5 h-5 text-[#334a38]"></i>
+              </div>
+            </div>
+            <div class="service-content px-6 md:px-8 overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+              <h4 class="text-xl font-serif italic text-[#D891A8] mb-4">Strategic visibility - not random hype.</h4>
+              <p class="text-lg mb-6 leading-relaxed opacity-90">We design how your brand shows up in the public space. From campaign concepts to media angles, we build a PR blueprint that feels intentional, relevant, and culturally aligned. This isn’t just press. It’s perception planning.</p>
+              <div class="bg-[#f4f0e4] text-[#334a38] p-6 rounded-2xl border-2 border-[#334a38]">
+                <h5 class="font-bold uppercase mb-4 text-[#334a38]/80">What you get:</h5>
+                <ul class="space-y-2">
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Campaign ideation & PR strategy</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Cultural positioning angles</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Media & visibility mapping</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Long-term brand narrative structure</li>
+                </ul>
+              </div>
+              <p class="mt-6 font-bold uppercase tracking-widest text-sm text-[#D891A8]">Because exposure without strategy? Mid.</p>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-item border-4 border-[#334a38] rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer bg-[#f4f0e4] hover:bg-[#D891A8] shadow-[6px_6px_0px_#334a38]" data-active="false">
+            <div class="p-6 md:p-8 flex justify-between items-center">
+              <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide w-4/5">Moment & Influencer Marketing</h3>
+              <div class="icon-container w-10 h-10 rounded-full flex items-center justify-center border-2 transition-transform duration-300 border-[#334a38]">
+                <i data-lucide="sparkles" class="w-5 h-5 text-[#334a38]"></i>
+              </div>
+            </div>
+            <div class="service-content px-6 md:px-8 overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+              <h4 class="text-xl font-serif italic text-[#D891A8] mb-4">Right creator. Right timing. Real impact.</h4>
+              <p class="text-lg mb-6 leading-relaxed opacity-90">We don’t just send products to influencers and hope for the best. We carefully match your brand with creators who align with your energy, audience, and positioning - then place your product inside moments that feel natural, not scripted.</p>
+              <div class="bg-[#f4f0e4] text-[#334a38] p-6 rounded-2xl border-2 border-[#334a38]">
+                <h5 class="font-bold uppercase mb-4 text-[#334a38]/80">What you get:</h5>
+                <ul class="space-y-2">
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Influencer identification & vetting</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Strategic seeding plans</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Campaign rollouts</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Relationship-based creator collaborations</li>
+                </ul>
+              </div>
+              <p class="mt-6 font-bold uppercase tracking-widest text-sm text-[#D891A8]">We seed stories, not just products.</p>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-item border-4 border-[#334a38] rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer bg-[#f4f0e4] hover:bg-[#D891A8] shadow-[6px_6px_0px_#334a38]" data-active="false">
+            <div class="p-6 md:p-8 flex justify-between items-center">
+              <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide w-4/5">Narrative-Led Positioning</h3>
+              <div class="icon-container w-10 h-10 rounded-full flex items-center justify-center border-2 transition-transform duration-300 border-[#334a38]">
+                <i data-lucide="sparkles" class="w-5 h-5 text-[#334a38]"></i>
+              </div>
+            </div>
+            <div class="service-content px-6 md:px-8 overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+              <h4 class="text-xl font-serif italic text-[#D891A8] mb-4">Your story, but sharper.</h4>
+              <p class="text-lg mb-6 leading-relaxed opacity-90">If people can’t explain your brand in one line, it’s a problem. We define your voice, tone, personality, and cultural stance so your brand feels consistent everywhere - from social to campaigns to collaborations.</p>
+              <div class="bg-[#f4f0e4] text-[#334a38] p-6 rounded-2xl border-2 border-[#334a38]">
+                <h5 class="font-bold uppercase mb-4 text-[#334a38]/80">What you get:</h5>
+                <ul class="space-y-2">
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Core messaging framework</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Brand voice & tone guide</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Audience clarity</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Positioning statement & Narrative direction</li>
+                </ul>
+              </div>
+              <p class="mt-6 font-bold uppercase tracking-widest text-sm text-[#D891A8]">Because trends change. Identity doesn’t.</p>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-item border-4 border-[#334a38] rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer bg-[#f4f0e4] hover:bg-[#D891A8] shadow-[6px_6px_0px_#334a38]" data-active="false">
+            <div class="p-6 md:p-8 flex justify-between items-center">
+              <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide w-4/5">Performance-Driven UGC</h3>
+              <div class="icon-container w-10 h-10 rounded-full flex items-center justify-center border-2 transition-transform duration-300 border-[#334a38]">
+                <i data-lucide="sparkles" class="w-5 h-5 text-[#334a38]"></i>
+              </div>
+            </div>
+            <div class="service-content px-6 md:px-8 overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+              <h4 class="text-xl font-serif italic text-[#D891A8] mb-4">Content that looks native - and converts.</h4>
+              <p class="text-lg mb-6 leading-relaxed opacity-90">We create creator-led content that blends seamlessly into feeds while still driving real results. Authentic energy. Strategic execution. Soft sell. Strong impact.</p>
+              <div class="bg-[#f4f0e4] text-[#334a38] p-6 rounded-2xl border-2 border-[#334a38]">
+                <h5 class="font-bold uppercase mb-4 text-[#334a38]/80">What you get:</h5>
+                <ul class="space-y-2">
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> UGC creator sourcing</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Script & concept direction</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Conversion-focused content</li>
+                  <li class="flex items-center gap-3 font-medium"><i data-lucide="heart" class="w-4 h-4 text-[#D891A8] fill-current"></i> Paid-ad-ready assets & Performance tracking</li>
+                </ul>
+              </div>
+              <p class="mt-6 font-bold uppercase tracking-widest text-sm text-[#D891A8]">It’s not just aesthetic. It performs.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- The Sauce Section (Flip Cards) -->
+    <section id="the-sauce" class="py-32 px-6 bg-[#f6c2d0] border-t-4 border-[#334a38] relative overflow-hidden">
+      <!-- Decorative background elements -->
+      <i data-lucide="star" class="absolute top-10 left-10 w-16 h-16 text-[#D891A8] animate-spin-slow opacity-50"></i>
+      <i data-lucide="sparkles" class="absolute bottom-10 right-10 w-24 h-24 text-[#f4f0e4] animate-pulse opacity-60"></i>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-20 relative z-10">
+          <h2 class="text-sm font-bold tracking-widest uppercase text-[#334a38] mb-4 bg-[#f4f0e4] inline-block px-4 py-1 rounded-full shadow-[3px_3px_0px_#334a38]">What we do</h2>
+          <h3 class="text-6xl md:text-8xl font-black tracking-tighter text-[#334a38] mb-6 uppercase">
+            THE SAUCE
+          </h3>
+          <p class="text-2xl md:text-3xl font-serif italic text-[#334a38]/80 mt-4 max-w-2xl mx-auto">Everything you need to stop the scroll and start the conversation.</p>
+        </div>
+
+        <!-- Flip Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 perspective-1000 z-10 relative">
+          
+          <!-- Card 1 -->
+          <div class="group h-[450px] [perspective:1000px] cursor-pointer">
+            <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[10px_10px_0px_#334a38] rounded-[2rem]">
+              <!-- Front -->
+              <div class="absolute inset-0 bg-[#f4f0e4] rounded-[2rem] border-4 border-[#334a38] [backface-visibility:hidden] flex flex-col items-center justify-center p-8 overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-[#D891A8] rounded-full mix-blend-multiply opacity-30 animate-blob"></div>
+                <i data-lucide="zap" class="w-24 h-24 text-[#D891A8] mb-8 fill-[#D891A8] group-hover:scale-110 transition-transform duration-300"></i>
+                <h4 class="text-4xl font-black uppercase text-center leading-none text-[#334a38]">Viral<br><span class="text-[#D891A8] font-serif italic font-bold lowercase text-[2.5rem] tracking-normal block mt-2">strategy</span></h4>
+              </div>
+              <!-- Back -->
+              <div class="absolute inset-0 bg-[#334a38] text-[#f4f0e4] rounded-[2rem] border-4 border-[#334a38] [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col items-center justify-center p-8 text-center">
+                <h4 class="text-2xl font-black uppercase mb-6 text-[#D891A8]">Viral Strategy</h4>
+                <p class="text-xl font-medium leading-relaxed">We don't do boring briefs. We hack culture and jump on trends before they peak. We script the hooks that keep them watching.</p>
+                <i data-lucide="sparkles" class="w-8 h-8 text-[#f4f0e4] mt-8 opacity-50"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group h-[450px] [perspective:1000px] cursor-pointer md:mt-12">
+            <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[10px_10px_0px_#334a38] rounded-[2rem]">
+              <!-- Front -->
+              <div class="absolute inset-0 bg-[#f4f0e4] rounded-[2rem] border-4 border-[#334a38] [backface-visibility:hidden] flex flex-col items-center justify-center p-8 overflow-hidden">
+                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-[#D891A8] rounded-full mix-blend-multiply opacity-30 animate-blob"></div>
+                <i data-lucide="heart-handshake" class="w-24 h-24 text-[#D891A8] mb-8 group-hover:scale-110 transition-transform duration-300"></i>
+                <h4 class="text-4xl font-black uppercase text-center leading-none text-[#334a38]">Brand<br><span class="text-[#D891A8] font-serif italic font-bold lowercase text-[2.1rem] md:text-[2rem] lg:text-[2.2rem] tracking-normal block mt-2">matchmaking</span></h4>
+              </div>
+              <!-- Back -->
+              <div class="absolute inset-0 bg-[#334a38] text-[#f4f0e4] rounded-[2rem] border-4 border-[#334a38] [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col items-center justify-center p-8 text-center">
+                <h4 class="text-2xl font-black uppercase mb-6 text-[#D891A8]">Brand Matchmaking</h4>
+                <p class="text-xl font-medium leading-relaxed">No forced sponsorships. We pair your brand with creators who already vibe with your product. Authenticity is the only currency.</p>
+                <i data-lucide="users" class="w-8 h-8 text-[#f4f0e4] mt-8 opacity-50"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group h-[450px] [perspective:1000px] cursor-pointer">
+            <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[10px_10px_0px_#334a38] rounded-[2rem]">
+              <!-- Front -->
+              <div class="absolute inset-0 bg-[#f4f0e4] rounded-[2rem] border-4 border-[#334a38] [backface-visibility:hidden] flex flex-col items-center justify-center p-8 overflow-hidden">
+                <div class="absolute bottom-4 -right-8 w-32 h-32 bg-[#D891A8] rounded-full mix-blend-multiply opacity-30 animate-blob animation-delay-4000"></div>
+                <i data-lucide="flame" class="w-24 h-24 text-[#D891A8] mb-8 fill-[#D891A8] group-hover:scale-110 transition-transform duration-300"></i>
+                <h4 class="text-4xl font-black uppercase text-center leading-none text-[#334a38]">Paid<br><span class="text-[#D891A8] font-serif italic font-bold lowercase text-[2rem] md:text-[1.9rem] lg:text-[2.1rem] tracking-normal block mt-2">amplification</span></h4>
+              </div>
+              <!-- Back -->
+              <div class="absolute inset-0 bg-[#334a38] text-[#f4f0e4] rounded-[2rem] border-4 border-[#334a38] [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col items-center justify-center p-8 text-center">
+                <h4 class="text-2xl font-black uppercase mb-6 text-[#D891A8]">Paid Amplification</h4>
+                <p class="text-xl font-medium leading-relaxed">When a post bangs, we put gas on the fire. Our whitelisting strategy turns organic wins into massive ROAS.</p>
+                <i data-lucide="rocket" class="w-8 h-8 text-[#f4f0e4] mt-8 opacity-50"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================== ABOUT PAGE VIEW ======================== -->
+  <main id="about-page" class="hidden min-h-screen bg-[#f4f0e4]">
+    <!-- Vision & Mission Grid -->
+    <section class="pt-48 pb-24 px-6 bg-[#f4f0e4]">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Vision Card -->
+        <div class="bg-[#f6c2d0] p-10 md:p-14 rounded-[2rem] shadow-[8px_8px_0px_#334a38] transform transition-transform hover:-translate-y-2 relative">
+          
+          <!-- Spinning GenZ Sticker -->
+          <div class="absolute -top-8 -right-4 md:-right-8 bg-[#f4f0e4] text-[#334a38] border-2 border-[#334a38] rounded-full w-28 h-28 flex items-center justify-center font-black uppercase text-center shadow-[4px_4px_0px_#334a38] animate-spin-slow z-20 leading-tight p-2">
+            Vibes<br>Only
+          </div>
+
+          <h2 class="text-5xl font-black text-[#334a38] uppercase mb-8">Vision</h2>
+          <h3 class="text-4xl font-serif italic text-[#334a38] mb-6 leading-tight">Seen.<br>Saved.<br>Spoken about.</h3>
+          <p class="text-xl text-[#334a38] font-medium">
+            Hype fades. Perception stays. <br>We shape how the internet remembers you.
+          </p>
+        </div>
+
+        <!-- Mission Card -->
+        <div class="bg-[#334a38] p-10 md:p-14 rounded-[2rem] shadow-[8px_8px_0px_#D891A8] transform transition-transform hover:-translate-y-2 md:translate-y-12">
+          <h2 class="text-5xl font-black text-[#f4f0e4] uppercase mb-8">Mission</h2>
+          <p class="text-2xl text-[#f4f0e4] font-bold mb-6 leading-snug">
+            Ree’ch exists to build brands that don’t just trend <br>
+            <span class="text-[#334a38] bg-[#D891A8] px-2 rounded-md italic inline-block mt-2">they take up space.</span>
+          </p>
+          <p class="text-lg text-[#f4f0e4] font-medium">
+            Because chasing the algorithm is exhausting. Owning your positioning? Power move. We don’t follow waves. We create presence.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Founder Section - ORIGINAL PINK KEPT HERE -->
+    <section class="py-24 px-6 bg-[#f6c2d0] relative overflow-hidden border-y-4 border-[#334a38]">
+      <div class="absolute -right-20 top-0 w-96 h-96 bg-[#334a38] rounded-full mix-blend-multiply blur-3xl opacity-10"></div>
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
+        
+        <div class="w-full md:w-1/2 flex justify-center relative">
+          
+          <!-- GenZ Dialogue Box -->
+          <div class="absolute -left-2 md:left-4 top-10 bg-[#f4f0e4] border-2 border-[#334a38] text-[#334a38] px-5 py-3 rounded-3xl rounded-br-none font-bold text-md md:text-lg shadow-[6px_6px_0px_#D891A8] z-30 float-animation" style="animation-duration: 4s;">
+            serving looks & strategy 💅
+          </div>
+
+          <!-- Founder Image Frame / Placeholder -->
+          <div class="w-72 h-96 md:w-96 md:h-[500px] bg-[#f4f0e4] p-4 pb-16 rounded-lg shadow-[15px_15px_0px_#334a38] transform -rotate-3 hover:rotate-0 transition-transform duration-500 mt-12 md:mt-0">
+             <div class="w-full h-full bg-[#f6c2d0] border-2 border-dashed border-[#334a38] flex flex-col items-center justify-center text-center p-6">
+               <i data-lucide="sparkles" class="w-10 h-10 text-[#334a38] mb-4"></i>
+               <p class="font-bold text-[#334a38] uppercase tracking-widest">[ Anushree's Photo Here ]</p>
+               <p class="text-sm mt-2 font-serif italic text-[#334a38]/80">Make it aesthetic ✨</p>
+             </div>
+             <p class="text-center mt-6 font-script text-2xl text-[#334a38] font-bold">Anushree</p>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 text-[#334a38]">
+          <h2 class="text-sm font-bold tracking-widest uppercase text-[#334a38] mb-2">The Brains Behind The Brand</h2>
+          <h3 class="text-5xl md:text-7xl font-black uppercase mb-8">
+            Meet <span class="text-[#f4f0e4] font-script normal-case tracking-normal text-[5.5rem] md:text-[8.5rem] drop-shadow-[3px_3px_0px_#334a38] block mt-2 md:-mt-4 relative z-20 leading-[0.8]">Anushree</span>
+          </h3>
+          
+          <div class="text-xl font-medium space-y-6 leading-relaxed">
+            <p>
+              Ree’ch was built by Anushree, a goal-driven creative who understands that branding isn’t just aesthetics <br>
+              <strong class="bg-[#334a38] text-[#f4f0e4] px-2 py-1 rounded inline-block mt-2">it’s psychology.</strong>
+            </p>
+            <p>
+              She saw brands chasing trends, burning budgets, and still blending in. So she built something different. Ree’ch was created to help brands stand firm, speak clearly, and move with culture — not behind it.
+            </p>
+            <div class="text-2xl font-serif italic text-[#334a38] pt-4">
+              No fluff. No fake hype. <br>Just sharp strategy and real presence.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================== SHARED SECTIONS ======================== -->
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-32 px-6 bg-[#334a38] text-[#f4f0e4] text-center relative overflow-hidden">
+    <!-- Decorative elements -->
+    <i data-lucide="star" class="absolute top-20 left-20 w-12 h-12 text-[#D891A8] animate-spin-slow"></i>
+    <i data-lucide="star" class="absolute bottom-20 right-20 w-16 h-16 text-[#f4f0e4] animate-bounce"></i>
+
+    <div class="max-w-4xl mx-auto relative z-10">
+      <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8 leading-none">
+        Ready to stop blending in?
+      </h2>
+      <p class="text-2xl md:text-3xl font-serif italic text-[#f4f0e4]/80 mb-12">
+        Let’s build something that actually hits.
+      </p>
+      
+      <!-- Button -->
+      <button onclick="scrollToContact()" class="bg-[#f6c2d0] text-[#334a38] text-2xl font-black uppercase tracking-widest px-12 py-6 rounded-full hover:bg-[#f4f0e4] transition-all duration-300 shadow-[8px_8px_0px_#f6c2d0] hover:shadow-[4px_4px_0px_#f6c2d0] hover:translate-y-1">
+        Spill The Tea (Contact Us)
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#f4f0e4] text-[#334a38] py-12 px-6 border-t-4 border-[#334a38]">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-4xl font-black uppercase tracking-tighter cursor-pointer" onclick="switchPage('home')">Ree'ch</div>
+      
+      <div class="font-bold text-lg md:text-xl text-center md:text-left">
+        Built for culture. <span class="text-[#D891A8] italic font-serif lowercase">Not just the feed.</span>
+      </div>
+
+      <div class="flex gap-4">
+        <a href="#" class="w-12 h-12 rounded-full bg-[#D891A8] flex items-center justify-center hover:bg-[#334a38] hover:text-[#f4f0e4] transition-colors duration-300 shadow-[3px_3px_0px_#334a38]">
+          <i data-lucide="instagram" class="w-6 h-6"></i>
+        </a>
+        <a href="#" class="w-12 h-12 rounded-full bg-[#D891A8] flex items-center justify-center hover:bg-[#334a38] hover:text-[#f4f0e4] transition-colors duration-300 shadow-[3px_3px_0px_#334a38]">
+          <i data-lucide="twitter" class="w-6 h-6"></i>
+        </a>
+        <a href="#" class="w-12 h-12 rounded-full bg-[#D891A8] flex items-center justify-center hover:bg-[#334a38] hover:text-[#f4f0e4] transition-colors duration-300 shadow-[3px_3px_0px_#334a38]">
+          <i data-lucide="mail" class="w-6 h-6"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Loader Vibe Check Logic
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.classList.add('opacity-0');
+        setTimeout(() => {
+          loader.classList.add('hidden');
+        }, 500); // Wait for CSS transition
+      }, 2500);
+    });
+
+    // --- Page Routing Logic ---
+    function switchPage(page) {
+      // Instantly go to top
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      
+      const homePage = document.getElementById('home-page');
+      const aboutPage = document.getElementById('about-page');
+      
+      if (page === 'home') {
+        homePage.classList.remove('hidden');
+        homePage.classList.add('block');
+        aboutPage.classList.add('hidden');
+        aboutPage.classList.remove('block');
+      } else if (page === 'about') {
+        homePage.classList.add('hidden');
+        homePage.classList.remove('block');
+        aboutPage.classList.remove('hidden');
+        aboutPage.classList.add('block');
+      }
+    }
+
+    function scrollToServices() {
+      const homePage = document.getElementById('home-page');
+      
+      // If we are not on the homepage, switch to it first
+      if (homePage.classList.contains('hidden')) {
+        switchPage('home');
+        // Wait a tiny bit for the DOM to render the home page before scrolling
+        setTimeout(() => {
+          document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      } else {
+        // If already on homepage, just scroll
+        document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function scrollToContact() {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+    // -------------------------
+
+    // Services Accordion Logic
+    const services = document.querySelectorAll('.service-item');
+    
+    services.forEach(service => {
+      service.addEventListener('click', () => {
+        const isActive = service.getAttribute('data-active') === 'true';
+
+        // Close all services
+        services.forEach(s => {
+          s.setAttribute('data-active', 'false');
+          // Reset main container
+          s.className = 'service-item border-4 border-[#334a38] rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer bg-[#f4f0e4] hover:bg-[#D891A8] shadow-[6px_6px_0px_#334a38]';
+          
+          // Reset icon container
+          const iconContainer = s.querySelector('.icon-container');
+          iconContainer.className = 'icon-container w-10 h-10 rounded-full flex items-center justify-center border-2 transition-transform duration-300 border-[#334a38]';
+          
+          // Reset icon color (Lucide converts <i> to <svg>, so we select the svg)
+          const icon = iconContainer.querySelector('svg') || iconContainer.querySelector('i');
+          if (icon) {
+            icon.classList.remove('text-[#f4f0e4]');
+            icon.classList.add('text-[#334a38]');
+          }
+
+          // Hide content
+          const content = s.querySelector('.service-content');
+          content.className = 'service-content px-6 md:px-8 overflow-hidden transition-all duration-500 max-h-0 opacity-0';
+        });
+
+        // If it wasn't active, open it
+        if (!isActive) {
+          service.setAttribute('data-active', 'true');
+          
+          // Set active main container
+          service.className = 'service-item border-4 border-[#334a38] rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer bg-[#334a38] text-[#f4f0e4] shadow-[10px_10px_0px_#D891A8]';
+          
+          // Set active icon container
+          const iconContainer = service.querySelector('.icon-container');
+          iconContainer.className = 'icon-container w-10 h-10 rounded-full flex items-center justify-center border-2 transition-transform duration-300 bg-[#D891A8] border-[#D891A8] rotate-45';
+          
+          // Set active icon color
+          const icon = iconContainer.querySelector('svg') || iconContainer.querySelector('i');
+          if (icon) {
+            icon.classList.remove('text-[#334a38]');
+            icon.classList.add('text-[#334a38]'); 
+          }
+
+          // Show content
+          const content = service.querySelector('.service-content');
+          content.className = 'service-content px-6 md:px-8 overflow-hidden transition-all duration-500 max-h-[800px] pb-8 opacity-100';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
