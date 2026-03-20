@@ -10,6 +10,9 @@
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Model Viewer Component -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
   <!-- Google Fonts -->
   <style>
@@ -225,11 +228,11 @@
       
       <!-- Socials inside mobile nav -->
       <div class="flex gap-6 mt-4">
-        <a href="#" class="w-12 h-12 rounded-full bg-[#EBBCC1] flex items-center justify-center text-[#5B6D62] shadow-[3px_3px_0px_#5B6D62]">
+        <a href="https://www.instagram.com/reech.thesocialjungle/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-[#EBBCC1] flex items-center justify-center text-[#5B6D62] shadow-[3px_3px_0px_#5B6D62]">
           <i data-lucide="instagram" class="w-5 h-5"></i>
         </a>
         <a href="#" class="w-12 h-12 rounded-full bg-[#EBBCC1] flex items-center justify-center text-[#5B6D62] shadow-[3px_3px_0px_#5B6D62]">
-          <i data-lucide="mail" class="w-5 h-5"></i>
+          <i data-lucide="linkedin" class="w-5 h-5"></i>
         </a>
       </div>
     </div>
@@ -307,6 +310,73 @@
           <p class="text-[#EBBCC1] font-bold text-xl sm:text-2xl pt-2 md:pt-4">
             Because brands that try too hard fade. <br>Brands that stand firm? They stay iconic.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet Ree Section -->
+    <section id="meet-ree" class="py-16 md:py-24 px-4 sm:px-6 bg-[#FBF5EB] relative z-10">
+      <div class="max-w-7xl mx-auto">
+        <div class="relative rounded-[2rem] sm:rounded-[3rem] bg-[#5B6D62] overflow-hidden shadow-[6px_6px_0px_#5B6D62] sm:shadow-[10px_10px_0px_#5B6D62] flex flex-col lg:flex-row border-4 border-[#5B6D62]">
+          
+          <!-- Left Side: Full Avatar Space -->
+          <div class="w-full lg:w-1/2 relative min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center bg-[#EBBCC1] border-b-4 lg:border-b-0 lg:border-r-4 border-[#5B6D62] overflow-hidden group">
+            
+            <!-- 3D Avatar Model -->
+            <!-- Note: I am using a sample absolute URL because sandbox environments cannot parse local relative URLs like "model.glb". When hosting on your own server, replace this src with "model.glb"! -->
+            <model-viewer 
+              src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
+              alt="Ree 3D Avatar"
+              auto-rotate 
+              camera-controls 
+              autoplay 
+              loop 
+              class="w-full h-[75%] z-10 outline-none cursor-grab active:cursor-grabbing"
+              style="--poster-color: transparent;"
+            ></model-viewer>
+
+            <!-- "Observing..." Label -->
+            <div class="absolute bottom-6 right-6 md:bottom-8 md:right-8 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20">
+               <span class="w-2.5 h-2.5 rounded-full bg-[#EBBCC1] animate-pulse border border-[#5B6D62]"></span>
+               Observing… 👀
+            </div>
+          </div>
+
+          <!-- Right Side: Content -->
+          <div class="w-full lg:w-1/2 p-8 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-center relative z-10">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold uppercase text-[#FBF5EB] mb-4 tracking-wide">Meet Ree 👀</h2>
+            
+            <!-- Hook Line -->
+            <div class="mb-8 md:mb-10">
+              <span class="inline-block bg-[#EBBCC1] text-[#5B6D62] px-4 py-2 font-serif italic font-bold text-xl sm:text-2xl md:text-3xl mt-2 rounded-sm transform -rotate-1 shadow-[3px_3px_0px_#FBF5EB]">
+                She doesn’t blink. She observes.
+              </span>
+            </div>
+            
+            <!-- Body Text -->
+            <div class="space-y-4 md:space-y-6 text-base sm:text-lg md:text-xl text-[#FBF5EB]/90 font-medium leading-relaxed">
+              <p>While everyone’s chasing trends,<br class="hidden sm:block">Ree’s already seen what’s next.</p>
+              <p>No random creators.<br>No guesswork.</p>
+              <p>Just what actually hits<br>and stays.</p>
+            </div>
+            
+            <!-- Signature Line -->
+            <div class="mt-8 md:mt-10 border-l-4 border-[#EBBCC1] pl-5 py-2">
+              <p class="text-lg sm:text-xl md:text-2xl font-black uppercase tracking-wide text-[#FBF5EB] leading-tight">
+                If Ree approves it,<br>
+                <span class="text-[#EBBCC1] font-serif italic normal-case tracking-normal">it goes live.</span>
+              </p>
+            </div>
+            
+            <!-- Button -->
+            <div class="mt-10 md:mt-12">
+              <button class="group inline-flex items-center justify-center gap-3 bg-[#EBBCC1] text-[#5B6D62] px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-[#FBF5EB] transition-colors shadow-[4px_4px_0px_#FBF5EB] active:translate-y-1 active:shadow-[2px_2px_0px_#FBF5EB]">
+                Hear Ree 
+                <i data-lucide="headphones" class="w-5 h-5 text-[#5B6D62] group-hover:scale-110 transition-transform duration-300"></i>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -563,7 +633,7 @@
         <div class="text-center mb-12 sm:mb-16 lg:mb-24 px-2">
           <h2 class="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#5B6D62] mb-4 bg-[#EBBCC1] inline-block px-4 py-1 rounded-full shadow-[3px_3px_0px_#FBF5EB]">The Process</h2>
           <h3 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-[#FBF5EB] mb-4 md:mb-6 uppercase">
-            How we <span class="text-[#EBBCC1] font-serif italic lowercase font-bold tracking-normal">Ree'ch</span>
+            The Way We <span class="text-[#EBBCC1] font-serif italic lowercase font-bold tracking-normal">Ree'ch</span>
           </h3>
         </div>
 
@@ -578,7 +648,7 @@
                 <p class="text-base sm:text-lg md:text-2xl font-serif italic font-medium leading-relaxed">We decode your brand energy + what your audience is actually into.</p>
               </div>
               <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 bg-[#FBF5EB] rounded-full border-4 border-dashed border-[#5B6D62] flex items-center justify-center shrink-0 shadow-inner relative overflow-hidden">
-                <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/_%20(10).jpeg" alt="Spot the Vibe" class="w-full h-full object-cover">
+                <img src="https://uploads.onecompiler.io/44gq59f7a/44gwkwznz/%F0%9F%91%91%20Empower%20Your%20Feed_%20Boss%20Babe%20Templates%20(Free!).jpeg" alt="Spot the Vibe" class="w-full h-full object-cover">
               </div>
             </div>
             <!-- Tail -->
@@ -608,7 +678,7 @@
                 <p class="text-base sm:text-lg md:text-2xl font-serif italic font-medium leading-relaxed">Trend-first ideas, hooks that slap, content people don’t skip.</p>
               </div>
               <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 bg-[#FBF5EB] rounded-full border-4 border-dashed border-[#5B6D62] flex items-center justify-center shrink-0 shadow-inner relative overflow-hidden">
-                <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/More%20branding%20shoots%20in%202025%20please%20%F0%9F%99%8F%F0%9F%8F%BC%20%F0%9F%A4%AD.jpeg" alt="Cook the Sauce" class="w-full h-full object-cover">
+                <img src="https://uploads.onecompiler.io/44gq59f7a/44gwkwznz/Product%20Styling%20_%20Stories%20by%20Chloe.jpeg" alt="Cook the Sauce" class="w-full h-full object-cover">
               </div>
             </div>
             <!-- Tail -->
@@ -638,7 +708,7 @@
                 <p class="text-base sm:text-lg md:text-2xl font-serif italic font-medium leading-relaxed">Double down on what’s popping. Optimize, remix, repeat.</p>
               </div>
               <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 bg-[#FBF5EB] rounded-full border-4 border-dashed border-[#5B6D62] flex items-center justify-center shrink-0 shadow-inner relative overflow-hidden">
-                <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/Social%20Media%20Importance.jpeg" alt="Scale the Buzz" class="w-full h-full object-cover">
+                <img src="https://uploads.onecompiler.io/44gq59f7a/44gwkwznz/WhatsApp%20Image%202026-03-19%20at%2014.19.51.jpeg" alt="Scale the Buzz" class="w-full h-full object-cover">
               </div>
             </div>
           </div>
@@ -688,10 +758,10 @@
             <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[6px_6px_0px_#5B6D62] md:shadow-[10px_10px_0px_#5B6D62] rounded-[2rem]">
               <!-- Front -->
               <div class="absolute inset-0 bg-[#FBF5EB] rounded-[2rem] border-4 border-[#5B6D62] [backface-visibility:hidden] flex flex-col items-center justify-center p-6 sm:p-8 overflow-hidden">
-                <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/_%20(12).jpeg" alt="Brand Matchmaking Background" class="absolute inset-0 w-full h-full object-cover z-0">
+                <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/_%20(12).jpeg" alt="Brand Matchmaking Background" class="absolute inset-0 w-full h-full object-cover z-0" style="transform: scale(1.25) translateY(-4%);">
                 <div class="absolute -bottom-10 -left-10 w-24 h-24 sm:w-32 sm:h-32 bg-[#5B6D62] rounded-full mix-blend-multiply opacity-20 animate-blob z-10"></div>
-                <i data-lucide="heart-handshake" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-[#5B6D62] mb-6 sm:mb-8 group-hover:scale-110 transition-transform duration-300 relative z-20"></i>
-                <h4 class="text-3xl sm:text-4xl font-black uppercase text-center leading-none text-[#5B6D62] relative z-20">Brand<br><span class="text-[#5B6D62] font-serif italic font-bold lowercase text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem] tracking-normal block mt-2">matchmaking</span></h4>
+                <i data-lucide="heart-handshake" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-[#FBF5EB] mb-6 sm:mb-8 group-hover:scale-110 transition-transform duration-300 relative z-20"></i>
+                <h4 class="text-3xl sm:text-4xl font-bold uppercase text-center leading-none text-[#FBF5EB] relative z-20">BRAND<br><span class="text-[#FBF5EB] font-serif italic font-bold lowercase text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem] tracking-normal block mt-2">matchmaking</span></h4>
               </div>
               <!-- Back -->
               <div class="absolute inset-0 bg-[#5B6D62] text-[#FBF5EB] rounded-[2rem] border-4 border-[#5B6D62] [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col items-center justify-center p-6 md:p-8 text-center">
@@ -701,13 +771,13 @@
               </div>
             </div>
           </div>
-
+          <!-- Card 2 -->
           <!-- Card 3 -->
           <div class="group h-[380px] sm:h-[420px] md:h-[450px] [perspective:1000px] cursor-pointer md:col-span-2 lg:col-span-1 md:w-1/2 lg:w-full md:mx-auto lg:mx-0">
             <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[6px_6px_0px_#5B6D62] md:shadow-[10px_10px_0px_#5B6D62] rounded-[2rem]">
               <!-- Front -->
               <div class="absolute inset-0 bg-[#FBF5EB] rounded-[2rem] border-4 border-[#5B6D62] [backface-visibility:hidden] flex flex-col items-center justify-center p-6 sm:p-8 overflow-hidden">
-                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-40 sm:h-40 bg-[#EBBCC1] rounded-full mix-blend-multiply opacity-20 animate-spin-slow"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-40 sm:h-40 bg-[#EBBCC1] rounded-full mix-blend-multiply opacity-40 animate-blob animation-delay-4000"></div>
                 <i data-lucide="flame" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-[#EBBCC1] mb-6 sm:mb-8 fill-[#EBBCC1] group-hover:scale-110 transition-transform duration-300"></i>
                 <h4 class="text-3xl sm:text-4xl font-black uppercase text-center leading-none text-[#5B6D62]">Paid<br><span class="text-[#EBBCC1] font-serif italic font-bold lowercase text-[1.8rem] sm:text-[1.9rem] lg:text-[2.1rem] tracking-normal block mt-2">amplification</span></h4>
               </div>
@@ -931,10 +1001,8 @@
         <div class="w-full md:w-1/2 flex justify-center">
           <!-- Founder Image Frame / Placeholder -->
           <div class="w-[80%] sm:w-72 md:w-80 lg:w-96 aspect-[3/4] md:h-[500px] bg-[#FBF5EB] p-3 sm:p-4 pb-12 sm:pb-16 rounded-xl sm:rounded-2xl shadow-[10px_10px_0px_#5B6D62] sm:shadow-[15px_15px_0px_#5B6D62] transform -rotate-3 hover:rotate-0 transition-transform duration-500 flex flex-col">
-             <div class="w-full flex-1 bg-[#EBBCC1] border-2 border-dashed border-[#5B6D62] flex flex-col items-center justify-center text-center p-4 sm:p-6">
-               <i data-lucide="sparkles" class="w-8 h-8 sm:w-10 sm:h-10 text-[#5B6D62] mb-3 sm:mb-4"></i>
-               <p class="font-bold text-[#5B6D62] uppercase tracking-widest text-xs sm:text-sm">[ Anushree's Photo Here ]</p>
-               <p class="text-xs sm:text-sm mt-2 font-serif italic text-[#5B6D62]/80">Make it aesthetic ✨</p>
+             <div class="w-full flex-1 border-2 border-[#5B6D62] overflow-hidden relative">
+               <img src="https://uploads.onecompiler.io/44gq59f7a/44gwkwznz/Screenshot%202026-03-20%20at%209.40.03%E2%80%AFPM.png" alt="Anushree" class="absolute inset-0 w-full h-full object-cover">
              </div>
              <p class="text-center mt-4 sm:mt-6 font-serif italic text-2xl sm:text-3xl text-[#5B6D62] font-bold">Anushree</p>
           </div>
@@ -1001,7 +1069,7 @@
       </div>
 
       <div class="flex gap-4">
-        <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#EBBCC1] flex items-center justify-center hover:bg-[#5B6D62] hover:text-[#FBF5EB] transition-colors duration-300 shadow-[2px_2px_0px_#5B6D62] md:shadow-[3px_3px_0px_#5B6D62]">
+        <a href="https://www.instagram.com/reech.thesocialjungle/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#EBBCC1] flex items-center justify-center hover:bg-[#5B6D62] hover:text-[#FBF5EB] transition-colors duration-300 shadow-[2px_2px_0px_#5B6D62] md:shadow-[3px_3px_0px_#5B6D62]">
           <i data-lucide="instagram" class="w-5 h-5 md:w-6 md:h-6"></i>
         </a>
         <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#EBBCC1] flex items-center justify-center hover:bg-[#5B6D62] hover:text-[#FBF5EB] transition-colors duration-300 shadow-[2px_2px_0px_#5B6D62] md:shadow-[3px_3px_0px_#5B6D62]">
