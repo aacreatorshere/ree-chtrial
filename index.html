@@ -321,15 +321,12 @@
           
           <!-- Left Side: Full Avatar Space -->
           <div class="w-full lg:w-1/2 relative min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center bg-[#EBBCC1] border-b-4 lg:border-b-0 lg:border-r-4 border-[#5B6D62] overflow-hidden group">
-
+            
             <!-- 3D Avatar Model -->
-            <!-- To load from a local file without external hosting, change the src attribute below to src="model.glb" when deploying to your server -->
             <model-viewer 
-              src="https://model.glb" 
+              src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
               alt="Ree 3D Avatar"
               camera-controls 
-              loop
-              camera-orbit="0deg 90deg auto"
               class="absolute inset-0 w-full h-full z-10 outline-none cursor-grab active:cursor-grabbing"
               style="--poster-color: transparent; background-color: transparent;"
             ></model-viewer>
