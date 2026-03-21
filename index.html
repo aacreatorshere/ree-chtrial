@@ -326,25 +326,21 @@
             <!-- Note: I am using a sample absolute URL because sandbox environments cannot parse local relative URLs like "model.glb". When hosting on your own server, replace this src with "model.glb"! -->
             <model-viewer 
   src="model.glb"
-
+  
   camera-controls
-  autoplay
-  animation-name="*"
+  auto-rotate="false"
+  
+  camera-target="0m 1.5m 0m"
+  camera-orbit="0deg 90deg 1.6m"
 
-  exposure="1.3"
-  shadow-intensity="1.2"
+  exposure="1.2"
+  shadow-intensity="1"
   environment-image="neutral"
 
-  camera-target="0m 1.5m 0m"
-  camera-orbit="0deg 90deg 1.4m"
-
-  disable-zoom
-  min-camera-orbit="auto auto 1.4m"
-  max-camera-orbit="auto auto 1.4m"
+  interaction-prompt="none"
 
   style="width:100%; height:100%;">
 </model-viewer>
-
             <!-- "Observing..." Label -->
             <div class="absolute bottom-6 right-6 md:bottom-8 md:right-8 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20">
                <span class="w-2.5 h-2.5 rounded-full bg-[#EBBCC1] animate-pulse border border-[#5B6D62]"></span>
