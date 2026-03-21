@@ -10,7 +10,7 @@
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <!-- Model Viewer Component -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
@@ -322,23 +322,17 @@
           <!-- Left Side: Full Avatar Space -->
           <div class="w-full lg:w-1/2 relative min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center bg-[#EBBCC1] border-b-4 lg:border-b-0 lg:border-r-4 border-[#5B6D62] overflow-hidden group">
             
+            <!-- Background Image -->
+            <img src="https://uploads.onecompiler.io/44gq59f7a/44gwkwznz/_%20(14).jpeg" alt="Ree Background" class="absolute inset-0 w-full h-full object-cover z-0">
+
             <!-- 3D Avatar Model -->
-            <!-- Note: I am using a sample absolute URL because sandbox environments cannot parse local relative URLs like "model.glb". When hosting on your own server, replace this src with "model.glb"! -->
             <model-viewer 
-  src="model.glb"
-  auto-rotate
-  camera-controls
-  autoplay
-  animation-name="*"
-  exposure="1.2"
-  shadow-intensity="1"
-  environment-image="neutral"
-
-  camera-target="0m 1m 0m"
-  camera-orbit="0deg 75deg 2.5m"
-
-  style="width:100%; height:100%;">
-</model-viewer>
+              src="model.glb" 
+              alt="Ree 3D Avatar"
+              camera-controls 
+              class="absolute inset-0 w-full h-full z-10 outline-none cursor-grab active:cursor-grabbing"
+              style="--poster-color: transparent; background-color: transparent;"
+            ></model-viewer>
 
             <!-- "Observing..." Label -->
             <div class="absolute bottom-6 right-6 md:bottom-8 md:right-8 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20">
