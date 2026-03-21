@@ -317,33 +317,23 @@
     <!-- Meet Ree Section -->
     <section id="meet-ree" class="py-16 md:py-24 px-4 sm:px-6 bg-[#FBF5EB] relative z-10">
       <div class="max-w-7xl mx-auto">
-        <div class="relative rounded-[2rem] sm:rounded-[3rem] bg-[#5B6D62] overflow-hidden shadow-[6px_6px_0px_#5B6D62] sm:shadow-[10px_10px_0px_#5B6D62] flex flex-col lg:flex-row border-4 border-[#5B6D62]">
+        <div class="relative rounded-[2rem] sm:rounded-[3rem] bg-[#5B6D62] overflow-hidden shadow-[6px_6px_0px_#5B6D62] sm:shadow-[10px_10px_0px_#5B6D62] flex flex-col md:flex-row border-4 border-[#5B6D62]">
           
           <!-- Left Side: Full Avatar Space -->
-          <div class="w-full lg:w-1/2 relative min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center bg-[#EBBCC1] border-b-4 lg:border-b-0 lg:border-r-4 border-[#5B6D62] overflow-hidden group">
-            
-            <!-- 3D Avatar Model -->
-            <model-viewer 
-              src="model.glb" 
-              alt="Ree 3D Avatar"
-              camera-controls 
-              camera-orbit="90deg 90deg 2.4m"
-              exposure="1.2"
-              shadow-intensity="1"
-              environment-image="neutral"
-              class="absolute inset-0 w-full h-full z-10 outline-none cursor-grab active:cursor-grabbing"
-              style="--poster-color: transparent; background-color: transparent;"
-            ></model-viewer>
-            
+          <div class="w-full md:w-[45%] lg:w-[40%] relative min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center bg-[#EBBCC1] border-b-4 md:border-b-0 md:border-r-4 border-[#5B6D62] overflow-hidden group">
+
+            <!-- 3D Avatar Model / Spline Embed -->
+            <iframe src='https://my.spline.design/untitled-ITjoZKbUeMWTlrDsCUZS0ZSH/' frameborder='0' class="absolute left-0 w-full z-10 origin-center" style="height: calc(100% + 160px); top: -60px; transform: scale(1.15);"></iframe>
+
             <!-- "Observing..." Label -->
-            <div class="absolute bottom-6 right-6 md:bottom-8 md:right-8 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20">
+            <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20 pointer-events-none">
                <span class="w-2.5 h-2.5 rounded-full bg-[#EBBCC1] animate-pulse border border-[#5B6D62]"></span>
                Observing… 👀
             </div>
           </div>
 
           <!-- Right Side: Content -->
-          <div class="w-full lg:w-1/2 p-8 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-center relative z-10">
+          <div class="w-full md:w-[55%] lg:w-[60%] p-8 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-center relative z-10">
             <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold uppercase text-[#FBF5EB] mb-4 tracking-wide">Meet Ree 👀</h2>
             
             <!-- Hook Line -->
@@ -625,7 +615,7 @@
     <section id="how-we-reech" class="py-16 md:py-24 lg:py-32 px-4 md:px-6 bg-[#5B6D62] text-[#FBF5EB] border-t-4 border-[#5B6D62] relative overflow-hidden">
       <!-- Decorative background elements -->
       <i data-lucide="sparkles" class="absolute top-10 left-6 md:top-16 md:left-10 w-12 h-12 md:w-16 md:h-16 text-[#EBBCC1] animate-pulse opacity-40"></i>
-      <i data-lucide="star" class="absolute bottom-10 right-6 md:bottom-20 md:right-10 w-12 h-12 md:w-20 md:h-20 text-[#FBF5EB] animate-spin-slow opacity-30"></i>
+      <i data-lucide="star" class="absolute bottom-10 right-6 md:bottom-20 right-10 w-12 h-12 md:w-20 md:h-20 text-[#FBF5EB] animate-spin-slow opacity-30"></i>
 
       <div class="max-w-5xl mx-auto relative z-10">
         
