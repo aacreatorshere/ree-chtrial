@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ree'ch Brand Agency</title>
   
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GWYS9JDFEH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GWYS9JDFEH');
+</script>
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -323,19 +333,17 @@
           <div class="w-full lg:w-1/2 relative min-h-[300px] md:min-h-[400px] flex items-center justify-center bg-[#EBBCC1] border-b-4 lg:border-b-0 lg:border-r-4 border-[#5B6D62] overflow-hidden group">
 
             <!-- 3D Avatar Model -->
+            <!-- ⚠️ DO NOT use 'src="model.glb"' in this online preview editor, as it cannot load local files and will cause a "Failed to fetch" error. Keep this absolute URL until you host the code on your own server! -->
             <model-viewer 
-              src="model.glb"
+              src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
+              alt="Ree 3D Avatar"
+              camera-controls 
               autoplay
-              camera-controls
-              exposure="1.05"
-              shadow-intensity="0.6"
-              shadow-softness="0.8"
-              environment-image="studio"
-              tone-mapping="aces"
-              animation-name="*"
+              loop
+              camera-orbit="0deg 90deg auto"
               class="absolute inset-0 w-full h-full z-10 outline-none cursor-grab active:cursor-grabbing"
-              style="width: 100%; height: 100%; background: transparent;">
-            </model-viewer>
+              style="--poster-color: transparent; background-color: transparent;"
+            ></model-viewer>
 
             <!-- "Observing..." Label -->
             <div class="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20">
