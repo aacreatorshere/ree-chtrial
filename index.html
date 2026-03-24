@@ -315,66 +315,75 @@
     </section>
 
     <!-- Meet Ree Section -->
-    <section id="meet-ree" class="py-16 md:py-24 px-4 sm:px-6 bg-[#FBF5EB] relative z-10">
+    <section id="meet-ree" class="py-8 md:py-10 lg:py-12 px-4 sm:px-6 bg-[#FBF5EB] relative z-10">
       <div class="max-w-7xl mx-auto">
         <div class="relative rounded-[2rem] sm:rounded-[3rem] bg-[#5B6D62] overflow-hidden shadow-[6px_6px_0px_#5B6D62] sm:shadow-[10px_10px_0px_#5B6D62] flex flex-col lg:flex-row border-4 border-[#5B6D62]">
           
           <!-- Left Side: Full Avatar Space -->
-          <div class="w-full lg:w-1/2 relative min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center bg-[#EBBCC1] border-b-4 lg:border-b-0 lg:border-r-4 border-[#5B6D62] overflow-hidden group">
-            
+          <div class="w-full lg:w-1/2 relative min-h-[300px] md:min-h-[400px] flex items-center justify-center bg-[#EBBCC1] border-b-4 lg:border-b-0 lg:border-r-4 border-[#5B6D62] overflow-hidden group">
+
             <!-- 3D Avatar Model -->
+            <!-- To load from a local file without external hosting, change the src attribute below to src="model.glb" when deploying to your server -->
             <model-viewer 
-            src="model.glb"
-            camera-controls
-            
-            exposure="0.8"
-            shadow-intensity="1"
-            shadow-softness="0.5"
-            
-            environment-image="neutral"
-            tone-mapping="aces"
-            
-            style="width: 100%; height: 100%; background: transparent;">
-</model-viewer>
+              src="model.glb"
+              autoplay
+              camera-controls
+              
+              exposure="1.05"
+              shadow-intensity="0.6"
+              shadow-softness="0.8"
+             
+              environment-image="studio"
+              tone-mapping="aces"
+              
+              animation-name="*" 
+              animation-crossfade-duration="300"
+              
+              style="
+              width: 100%;
+              height: 100%;
+              background: transparent;
+              ">
+            </model-viewer>
 
             <!-- "Observing..." Label -->
-            <div class="absolute bottom-6 right-6 md:bottom-8 md:right-8 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20">
+            <div class="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20">
                <span class="w-2.5 h-2.5 rounded-full bg-[#EBBCC1] animate-pulse border border-[#5B6D62]"></span>
                Observing… 👀
             </div>
           </div>
 
           <!-- Right Side: Content -->
-          <div class="w-full lg:w-1/2 p-8 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-center relative z-10">
-            <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold uppercase text-[#FBF5EB] mb-4 tracking-wide">Meet Ree 👀</h2>
+          <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-8 xl:p-10 flex flex-col justify-center relative z-10">
+            <h2 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-serif font-bold uppercase text-[#FBF5EB] mb-2 sm:mb-3 tracking-wide">Meet Ree 👀</h2>
             
             <!-- Hook Line -->
-            <div class="mb-8 md:mb-10">
-              <span class="inline-block bg-[#EBBCC1] text-[#5B6D62] px-4 py-2 font-serif italic font-bold text-xl sm:text-2xl md:text-3xl mt-2 rounded-sm transform -rotate-1 shadow-[3px_3px_0px_#FBF5EB]">
+            <div class="mb-4 sm:mb-5">
+              <span class="inline-block bg-[#EBBCC1] text-[#5B6D62] px-3 py-1.5 md:px-4 md:py-2 font-serif italic font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl mt-1 rounded-sm transform -rotate-1 shadow-[3px_3px_0px_#FBF5EB]">
                 She doesn’t blink. She observes.
               </span>
             </div>
             
             <!-- Body Text -->
-            <div class="space-y-4 md:space-y-6 text-base sm:text-lg md:text-xl text-[#FBF5EB]/90 font-medium leading-relaxed">
+            <div class="space-y-3 sm:space-y-4 md:space-y-3 lg:space-y-4 text-sm sm:text-base md:text-lg text-[#FBF5EB]/90 font-medium leading-relaxed">
               <p>While everyone’s chasing trends,<br class="hidden sm:block">Ree’s already seen what’s next.</p>
               <p>No random creators.<br>No guesswork.</p>
               <p>Just what actually hits<br>and stays.</p>
             </div>
             
             <!-- Signature Line -->
-            <div class="mt-8 md:mt-10 border-l-4 border-[#EBBCC1] pl-5 py-2">
-              <p class="text-lg sm:text-xl md:text-2xl font-black uppercase tracking-wide text-[#FBF5EB] leading-tight">
+            <div class="mt-4 md:mt-6 border-l-4 border-[#EBBCC1] pl-4 md:pl-5 py-1.5 md:py-2">
+              <p class="text-base sm:text-lg md:text-xl font-black uppercase tracking-wide text-[#FBF5EB] leading-tight">
                 If Ree approves it,<br>
                 <span class="text-[#EBBCC1] font-serif italic normal-case tracking-normal">it goes live.</span>
               </p>
             </div>
             
             <!-- Button -->
-            <div class="mt-10 md:mt-12">
-              <button class="group inline-flex items-center justify-center gap-3 bg-[#EBBCC1] text-[#5B6D62] px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-[#FBF5EB] transition-colors shadow-[4px_4px_0px_#FBF5EB] active:translate-y-1 active:shadow-[2px_2px_0px_#FBF5EB]">
+            <div class="mt-4 md:mt-5">
+              <button class="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#EBBCC1] text-[#5B6D62] px-6 py-3 sm:px-8 sm:py-3.5 rounded-full font-black uppercase tracking-widest text-xs sm:text-sm hover:bg-[#FBF5EB] transition-colors shadow-[4px_4px_0px_#FBF5EB] active:translate-y-1 active:shadow-[2px_2px_0px_#FBF5EB]">
                 Hear Ree 
-                <i data-lucide="headphones" class="w-5 h-5 text-[#5B6D62] group-hover:scale-110 transition-transform duration-300"></i>
+                <i data-lucide="headphones" class="w-4 h-4 sm:w-5 sm:h-5 text-[#5B6D62] group-hover:scale-110 transition-transform duration-300"></i>
               </button>
             </div>
           </div>
