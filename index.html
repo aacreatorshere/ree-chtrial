@@ -5,24 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ree'ch Brand Agency</title>
   
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GWYS9JDFEH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GWYS9JDFEH');
-</script>
-  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Model Viewer Component -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
   <!-- Google Fonts -->
   <style>
@@ -209,15 +196,15 @@
     <div class="relative w-full px-4 md:px-8 py-3 md:py-4">
       <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
         <!-- Logo -->
-        <div class="cursor-pointer shrink-0 flex flex-col items-center justify-center relative z-[60]" onclick="switchPage('home')">
+        <div class="cursor-pointer shrink-0 flex flex-col items-center justify-center relative z-[60]" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
           <span class="text-2xl md:text-3xl font-serif font-medium uppercase text-[#5B6D62] tracking-wide leading-none mb-1">Ree'ch</span>
           <span class="text-[0.6rem] md:text-[0.7rem] font-sans font-medium uppercase text-[#5B6D62] tracking-[0.3em] leading-none">The Social Jungle</span>
         </div>
         
         <!-- Desktop Nav Links -->
         <div class="hidden md:flex items-center justify-end gap-6 md:gap-10">
-          <button onclick="switchPage('home')" class="text-[#5B6D62] font-bold uppercase tracking-widest text-xs lg:text-sm transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none whitespace-nowrap">Home</button>
-          <button onclick="switchPage('about')" class="text-[#5B6D62] font-bold uppercase tracking-widest text-xs lg:text-sm transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none whitespace-nowrap">About</button>
+          <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="text-[#5B6D62] font-bold uppercase tracking-widest text-xs lg:text-sm transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none whitespace-nowrap">Home</button>
+          <a href="about/index.html" class="text-[#5B6D62] font-bold uppercase tracking-widest text-xs lg:text-sm transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none whitespace-nowrap">About</a>
           <button onclick="scrollToServices()" class="text-[#5B6D62] font-bold uppercase tracking-widest text-xs lg:text-sm transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none whitespace-nowrap">Services</button>
           <button onclick="scrollToContact()" class="text-[#5B6D62] font-bold uppercase tracking-widest text-xs lg:text-sm transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none whitespace-nowrap">Slay With Us</button>
         </div>
@@ -231,8 +218,8 @@
 
     <!-- Mobile Nav Dropdown -->
     <div id="mobile-menu" class="absolute top-[100%] left-0 w-full h-[calc(100vh-64px)] bg-[#FBF5EB] border-t border-[#5B6D62]/20 flex flex-col items-center justify-center gap-10 shadow-2xl transition-all duration-300 -translate-y-full opacity-0 -z-10 md:hidden overflow-y-auto pb-20">
-      <button onclick="switchPage('home')" class="text-[#5B6D62] font-black uppercase tracking-widest text-3xl sm:text-4xl transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none hover:scale-105 transform">Home</button>
-      <button onclick="switchPage('about')" class="text-[#5B6D62] font-black uppercase tracking-widest text-3xl sm:text-4xl transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none hover:scale-105 transform">About</button>
+      <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu();" class="text-[#5B6D62] font-black uppercase tracking-widest text-3xl sm:text-4xl transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none hover:scale-105 transform">Home</button>
+      <a href="about/index.html" class="text-[#5B6D62] font-black uppercase tracking-widest text-3xl sm:text-4xl transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none hover:scale-105 transform">About</a>
       <button onclick="scrollToServices()" class="text-[#5B6D62] font-black uppercase tracking-widest text-3xl sm:text-4xl transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none hover:scale-105 transform">Services</button>
       <button onclick="scrollToContact()" class="text-[#5B6D62] font-black uppercase tracking-widest text-3xl sm:text-4xl transition-colors duration-300 hover:text-[#EBBCC1] focus:outline-none hover:scale-105 transform">Slay With Us</button>
       
@@ -332,21 +319,17 @@
           <!-- Left Side: Full Avatar Space -->
           <div class="w-full lg:w-1/2 relative min-h-[300px] md:min-h-[400px] flex items-center justify-center bg-[#EBBCC1] border-b-4 lg:border-b-0 lg:border-r-4 border-[#5B6D62] overflow-hidden group">
 
-            <!-- 3D Avatar Model -->
-            <!-- ⚠️ DO NOT use 'src="model.glb"' in this online preview editor, as it cannot load local files and will cause a "Failed to fetch" error. Keep this absolute URL until you host the code on your own server! -->
-            <model-viewer 
-              src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
-              alt="Ree 3D Avatar"
-              camera-controls 
-              autoplay
-              loop
-              camera-orbit="0deg 90deg auto"
-              class="absolute inset-0 w-full h-full z-10 outline-none cursor-grab active:cursor-grabbing"
-              style="--poster-color: transparent; background-color: transparent;"
-            ></model-viewer>
+            <!-- 3D Avatar Model (Spline iframe) -->
+            <iframe 
+              src="https://my.spline.design/untitled-ITjoZKbUeMWTlrDsCUZS0ZSH/" 
+              frameborder="0" 
+              width="100%" 
+              height="100%" 
+              class="absolute inset-0 w-full h-full z-10 outline-none"
+            ></iframe>
 
             <!-- "Observing..." Label -->
-            <div class="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20">
+            <div class="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-[#FBF5EB] border-2 border-[#5B6D62] text-[#5B6D62] px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-[3px_3px_0px_#5B6D62] z-20 pointer-events-none">
                <span class="w-2.5 h-2.5 rounded-full bg-[#EBBCC1] animate-pulse border border-[#5B6D62]"></span>
                Observing… 👀
             </div>
@@ -519,7 +502,7 @@
                 <div class="absolute inset-0 w-full h-full z-10 bg-black">
                   <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/Screenshot%202026-03-17%20at%205.07.07%E2%80%AFPM.png" alt="Showcase 1" class="phone1-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out opacity-100">
                   <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/Bisleri%20Hand%20Sanitizers.jpeg" alt="Showcase 2" class="phone1-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out opacity-0">
-                  <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/vibrant%20fresh%20elegant%20creative%20classy%20luxury%20contemporary%20sparkling%20water%20packaging%20design.jpeg" alt="Showcase 3" class="phone1-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out opacity-0">
+                  <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/vibrant%20fresh%20elegant%20creative%20classy%20contemporary%20sparkling%20water%20packaging%20design.jpeg" alt="Showcase 3" class="phone1-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out opacity-0">
                   <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/Product%20Styling%20and%20Photography%20for%20Coastals%20Hard%20Coco%20by%20Lady%20Sunday%20Styling.jpeg" alt="Showcase 4" class="phone1-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out opacity-0">
                   <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/(4)%20Instagram.jpeg" alt="Showcase 5" class="phone1-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out opacity-0">
                 </div>
@@ -805,243 +788,6 @@
     </section>
   </main>
 
-  <!-- ======================== ABOUT PAGE VIEW ======================== -->
-  <main id="about-page" class="hidden min-h-screen bg-[#FBF5EB]">
-    
-    <!-- New "About Us" Header & Pinboard Section -->
-    <section class="pt-24 md:pt-28 pb-0 bg-[#FBF5EB]">
-      <!-- Header Text -->
-      <div class="max-w-7xl mx-auto px-6 mb-6 md:mb-8 text-center">
-        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-[#5B6D62]">About Us</h1>
-      </div>
-
-      <!-- Chex Background & Pinboard -->
-      <div class="bg-chex-pattern relative z-10 border-b-4 border-[#5B6D62]">
-        
-        <!-- Wave SVG Transition (Beige fill masking top of grid) -->
-        <div class="w-full relative z-20 -mt-[1px]">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" class="w-full h-8 sm:h-12 md:h-16 fill-[#FBF5EB] block relative z-20">
-            <path d="M0,0 L0,50 Q250,100 500,50 T1000,50 L1000,0 Z" />
-          </svg>
-        </div>
-
-        <div class="pt-8 pb-16 sm:pb-20 md:pt-16 md:pb-32 px-4 sm:px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
-          
-          <!-- Left: Pinned Images -->
-          <div class="lg:col-span-6 relative flex justify-center lg:justify-start pt-6 sm:pt-10 pb-16 sm:pb-20">
-            
-            <!-- Image 1 -->
-            <div class="relative w-[80%] sm:w-[85%] max-w-[280px] sm:max-w-[320px] bg-[#FBF5EB] p-3 sm:p-4 pb-12 sm:pb-16 shadow-[6px_6px_0px_#5B6D62] sm:shadow-[8px_8px_0px_#5B6D62] -rotate-3 border-2 border-[#5B6D62] z-10 hover:rotate-0 transition-transform duration-300">
-              <!-- Pin -->
-              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#EBBCC1] border-2 border-[#5B6D62] shadow-[2px_2px_0px_#5B6D62] z-20">
-                <div class="w-1.5 h-1.5 rounded-full bg-white opacity-60 absolute top-1 left-1"></div>
-              </div>
-              <!-- Image Placeholder -->
-              <div class="w-full aspect-[4/5] bg-[#EBBCC1]/40 border-2 border-[#5B6D62]/20 flex items-center justify-center relative overflow-hidden">
-                <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/Remote%20work%20passion.jpeg" alt="Ree'ch Creative" class="absolute inset-0 w-full h-full object-cover">
-              </div>
-            </div>
-
-            <!-- Image 2 (Overlapping) -->
-            <div class="absolute bottom-4 sm:bottom-0 right-2 sm:right-8 md:right-12 lg:-right-8 w-[60%] sm:w-[65%] max-w-[200px] sm:max-w-[240px] bg-[#FBF5EB] p-2.5 sm:p-3 pb-10 sm:pb-12 shadow-[6px_6px_0px_#5B6D62] sm:shadow-[8px_8px_0px_#5B6D62] rotate-6 border-2 border-[#5B6D62] z-20 hover:rotate-12 transition-transform duration-300">
-              <!-- Pin -->
-              <div class="absolute -top-2.5 sm:-top-3 left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#5B6D62] border-2 border-[#FBF5EB] shadow-[2px_2px_0px_#5B6D62] z-20">
-                <div class="w-1 h-1 rounded-full bg-white opacity-60 absolute top-1 left-1"></div>
-              </div>
-              <!-- Image Placeholder -->
-              <div class="w-full aspect-square bg-[#EBBCC1]/40 border-2 border-[#5B6D62]/20 flex items-center justify-center relative overflow-hidden">
-                <img src="https://uploads.onecompiler.io/44gq59f7a/44gq593fe/FF%20Bellen%20Podcast.jpeg" alt="Ree'ch Workspace" class="absolute inset-0 w-full h-full object-cover">
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Right: Pinned Note/Info -->
-          <div class="lg:col-span-6 relative mt-6 sm:mt-10 lg:mt-0">
-            <div class="relative bg-[#FBF5EB] p-6 sm:p-8 md:p-12 shadow-[8px_8px_0px_#5B6D62] md:shadow-[12px_12px_0px_#5B6D62] rotate-1 border-[3px] md:border-4 border-[#5B6D62] hover:-rotate-1 transition-transform duration-300">
-              <!-- Pin -->
-              <div class="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#EBBCC1] border-2 border-[#5B6D62] shadow-[2px_2px_0px_rgba(0,0,0,0.2)] sm:shadow-[3px_3px_0px_rgba(0,0,0,0.2)] z-20">
-                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white opacity-60 absolute top-1 sm:top-1.5 left-1 sm:left-1.5"></div>
-              </div>
-
-              <h3 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-[#5B6D62] mb-6 sm:mb-8 relative inline-block">
-                What is Ree'ch?
-                <!-- underline -->
-                <svg class="absolute w-full h-2 sm:h-3 -bottom-1 left-0 text-[#EBBCC1]" preserveAspectRatio="none" viewBox="0 0 100 10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round">
-                  <path d="M2,8 Q25,2 50,5 T98,5"/>
-                </svg>
-              </h3>
-              
-              <div class="space-y-4 sm:space-y-6 text-[#5B6D62] text-base sm:text-lg md:text-xl font-medium leading-relaxed">
-                <p>
-                  <strong class="font-black text-lg sm:text-xl md:text-2xl block mb-1">Ree'ch isn’t just about being seen.</strong>
-                  It’s about being felt.
-                </p>
-                <p>
-                  In a world full of noise,<br>
-                  we focus on what actually lands<br>
-                  <span class="bg-[#EBBCC1]/40 px-2 py-1 rounded inline-block mt-2 font-serif italic text-xl sm:text-2xl font-bold">real connections, real conversations, real impact.</span>
-                </p>
-                <p>
-                  Not every view matters.<br>
-                  But the right ones? <br class="md:hidden">They change everything.
-                </p>
-                <p class="font-serif italic text-2xl sm:text-3xl md:text-4xl font-bold mt-6 sm:mt-8 text-[#EBBCC1] drop-shadow-[1px_1px_0px_#5B6D62] sm:drop-shadow-[2px_2px_0px_#5B6D62]">
-                  That’s Ree'ch.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Why REECH (Interactive Sensitive Content Section) -->
-    <section id="why-reech" class="py-16 md:py-24 lg:py-32 px-4 sm:px-6 bg-[#5B6D62] text-[#FBF5EB] relative overflow-hidden border-b-4 border-[#5B6D62]">
-      <!-- Header -->
-      <div class="max-w-4xl mx-auto text-center mb-10 md:mb-16 relative z-10">
-        <h2 class="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#EBBCC1] mb-4 bg-[#FBF5EB]/10 inline-block px-4 py-1.5 rounded-full shadow-[3px_3px_0px_#EBBCC1]">Not for everyone</h2>
-        <h3 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-[#FBF5EB] mb-2 sm:mb-4">Why Ree'ch</h3>
-        <p class="text-xl md:text-2xl lg:text-3xl font-serif italic text-[#EBBCC1] mt-2 sm:mt-4 max-w-2xl mx-auto">We don’t play the usual game.</p>
-      </div>
-
-      <!-- Interactive Reveal Container -->
-      <div class="reveal-container max-w-5xl mx-auto relative rounded-3xl sm:rounded-[2rem] overflow-hidden cursor-pointer group shadow-[6px_6px_0px_#EBBCC1] sm:shadow-[10px_10px_0px_#EBBCC1] min-h-[500px] sm:min-h-[600px] md:min-h-[700px] bg-[#111] transition-all duration-500 hover:shadow-[3px_3px_0px_#EBBCC1] sm:hover:shadow-[5px_5px_0px_#EBBCC1] hover:translate-y-1" onclick="this.classList.add('revealed')">
-        
-        <!-- Image with Blur -->
-        <img src="https://uploads.onecompiler.io/43x9h4bdj/44gkzry97/Screenshot%202026-03-17%20at%204.59.31%E2%80%AFPM.png" alt="Creative Content" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 blur-[15px] scale-110 opacity-60 group-hover:blur-[12px]" id="why-reech-img">
-        
-        <!-- Subtle Grain Overlay -->
-        <div class="absolute inset-0 bg-noise z-10 mix-blend-overlay"></div>
-
-        <!-- Initial Overlay Text -->
-        <div class="absolute inset-0 flex flex-col items-center justify-center z-20 transition-all duration-700 p-4" id="why-reech-overlay">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-[#111]/60 backdrop-blur-md flex items-center justify-center mb-4 sm:mb-6 border border-white/10 shadow-xl group-hover:scale-110 transition-transform duration-500">
-            <i data-lucide="eye-off" class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[#EBBCC1]"></i>
-          </div>
-          <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-widest text-[#FBF5EB] mb-2 sm:mb-3 text-center drop-shadow-md">Sensitive Content</h4>
-          <p class="text-base sm:text-lg md:text-xl font-serif italic text-[#EBBCC1] drop-shadow-md flex items-center gap-2">
-            <i data-lucide="pointer" class="w-3 h-3 sm:w-4 sm:h-4"></i> Tap to reveal
-          </p>
-        </div>
-
-        <!-- Revealed Content -->
-        <div class="absolute inset-0 z-30 flex flex-col justify-center p-5 sm:p-8 md:p-16 opacity-0 pointer-events-none transition-all duration-1000 translate-y-6 sm:translate-y-10 bg-[#111]/80 md:bg-[#111]/70 backdrop-blur-md md:backdrop-blur-sm" id="why-reech-content">
-          <div class="max-w-4xl mx-auto w-full space-y-5 sm:space-y-6 md:space-y-8">
-            
-            <!-- Point 1 -->
-            <div class="reveal-item opacity-0 transition-all duration-700 translate-y-4 sm:translate-y-6">
-              <h5 class="text-lg sm:text-xl md:text-3xl font-black text-[#EBBCC1] uppercase tracking-wide flex items-start md:items-center gap-2 sm:gap-3 md:gap-4 mb-1">
-                <i data-lucide="zap" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 shrink-0 mt-0.5 md:mt-0 fill-current opacity-80"></i> No random creators
-              </h5>
-              <p class="text-sm sm:text-base md:text-xl font-medium text-[#FBF5EB]/90 pl-7 sm:pl-9 md:pl-12">Every collab is intentional. If it doesn’t fit, we skip.</p>
-            </div>
-            
-            <!-- Point 2 -->
-            <div class="reveal-item opacity-0 transition-all duration-700 translate-y-4 sm:translate-y-6">
-              <h5 class="text-lg sm:text-xl md:text-3xl font-black text-[#EBBCC1] uppercase tracking-wide flex items-start md:items-center gap-2 sm:gap-3 md:gap-4 mb-1">
-                <i data-lucide="trending-up" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 shrink-0 mt-0.5 md:mt-0 opacity-80"></i> Trend-first thinking
-              </h5>
-              <p class="text-sm sm:text-base md:text-xl font-medium text-[#FBF5EB]/90 pl-7 sm:pl-9 md:pl-12">We catch what’s rising before it’s everywhere.</p>
-            </div>
-
-            <!-- Point 3 -->
-            <div class="reveal-item opacity-0 transition-all duration-700 translate-y-4 sm:translate-y-6">
-              <h5 class="text-lg sm:text-xl md:text-3xl font-black text-[#EBBCC1] uppercase tracking-wide flex items-start md:items-center gap-2 sm:gap-3 md:gap-4 mb-1">
-                <i data-lucide="target" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 shrink-0 mt-0.5 md:mt-0 opacity-80"></i> Content that hits
-              </h5>
-              <p class="text-sm sm:text-base md:text-xl font-medium text-[#FBF5EB]/90 pl-7 sm:pl-9 md:pl-12">We don’t push ads. We create moments people care about.</p>
-            </div>
-
-            <!-- Point 4 -->
-            <div class="reveal-item opacity-0 transition-all duration-700 translate-y-4 sm:translate-y-6">
-              <h5 class="text-lg sm:text-xl md:text-3xl font-black text-[#EBBCC1] uppercase tracking-wide flex items-start md:items-center gap-2 sm:gap-3 md:gap-4 mb-1">
-                <i data-lucide="globe" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 shrink-0 mt-0.5 md:mt-0 opacity-80"></i> Culture-led strategy
-              </h5>
-              <p class="text-sm sm:text-base md:text-xl font-medium text-[#FBF5EB]/90 pl-7 sm:pl-9 md:pl-12">Because brands don’t grow on logic alone, they grow on vibe.</p>
-            </div>
-
-            <!-- Point 5 -->
-            <div class="reveal-item opacity-0 transition-all duration-700 translate-y-4 sm:translate-y-6">
-              <h5 class="text-lg sm:text-xl md:text-3xl font-black text-[#EBBCC1] uppercase tracking-wide flex items-start md:items-center gap-2 sm:gap-3 md:gap-4 mb-1">
-                <i data-lucide="volume-x" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 shrink-0 mt-0.5 md:mt-0 opacity-80"></i> Less noise, more impact
-              </h5>
-              <p class="text-sm sm:text-base md:text-xl font-medium text-[#FBF5EB]/90 pl-7 sm:pl-9 md:pl-12">If it doesn’t hit, it doesn’t go out. Simple.</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vision & Mission Grid -->
-    <section class="py-16 md:py-24 px-4 sm:px-6 bg-[#FBF5EB]">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-        
-        <!-- Vision Card -->
-        <div class="bg-[#EBBCC1] p-6 sm:p-8 md:p-12 lg:p-14 rounded-3xl sm:rounded-[2rem] shadow-[6px_6px_0px_#5B6D62] sm:shadow-[8px_8px_0px_#5B6D62] transform transition-transform hover:-translate-y-2">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#5B6D62] uppercase mb-4 sm:mb-6 md:mb-8">Vision</h2>
-          <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif italic text-[#5B6D62] mb-4 md:mb-6 leading-tight">Seen.<br>Saved.<br>Spoken about.</h3>
-          <p class="text-base sm:text-lg md:text-xl text-[#5B6D62] font-medium">
-            Hype fades. Perception stays. <br>We shape how the internet remembers you.
-          </p>
-        </div>
-
-        <!-- Mission Card -->
-        <div class="bg-[#5B6D62] p-6 sm:p-8 md:p-12 lg:p-14 rounded-3xl sm:rounded-[2rem] shadow-[6px_6px_0px_#EBBCC1] sm:shadow-[8px_8px_0px_#EBBCC1] transform transition-transform hover:-translate-y-2 md:translate-y-8 lg:translate-y-12">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#FBF5EB] uppercase mb-4 sm:mb-6 md:mb-8">Mission</h2>
-          <p class="text-xl sm:text-2xl md:text-3xl text-[#FBF5EB] font-serif italic mb-4 md:mb-6 leading-snug">
-            Ree'ch exists to build brands that don’t just trend <br>
-            <span class="text-[#5B6D62] bg-[#EBBCC1] px-2 rounded-md inline-block mt-2">they take up space.</span>
-          </p>
-          <p class="text-sm sm:text-base md:text-lg text-[#FBF5EB] font-medium">
-            Because chasing the algorithm is exhausting. Owning your positioning? Power move. We don’t follow waves. We create presence.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Founder Section -->
-    <section class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-[#EBBCC1] relative overflow-hidden border-y-4 border-[#5B6D62]">
-      <div class="absolute -right-10 md:-right-20 top-0 w-64 h-64 md:w-96 md:h-96 bg-[#5B6D62] rounded-full mix-blend-multiply blur-3xl opacity-10"></div>
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
-        
-        <div class="w-full md:w-1/2 flex justify-center">
-          <!-- Founder Image Frame / Placeholder -->
-          <div class="w-[80%] sm:w-72 md:w-80 lg:w-96 aspect-[3/4] md:h-[500px] bg-[#FBF5EB] p-3 sm:p-4 pb-12 sm:pb-16 rounded-xl sm:rounded-2xl shadow-[10px_10px_0px_#5B6D62] sm:shadow-[15px_15px_0px_#5B6D62] transform -rotate-3 hover:rotate-0 transition-transform duration-500 flex flex-col">
-             <div class="w-full flex-1 border-2 border-[#5B6D62] overflow-hidden relative">
-               <img src="https://uploads.onecompiler.io/44gq59f7a/44ha7vrhh/Screenshot%202026-03-24%20at%206.22.02%E2%80%AFPM.png" alt="Anushree" class="absolute inset-0 w-full h-full object-cover">
-             </div>
-             <p class="text-center mt-4 sm:mt-6 font-serif italic text-2xl sm:text-3xl text-[#5B6D62] font-bold">Anushree</p>
-          </div>
-        </div>
-
-        <div class="w-full md:w-1/2 text-[#5B6D62] mt-8 md:mt-0 text-center md:text-left px-2 sm:px-0">
-          <h2 class="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#5B6D62] mb-2">The Brains Behind The Brand</h2>
-          <h3 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase mb-6 sm:mb-8">
-            Meet <span class="text-[#FBF5EB] font-serif italic normal-case tracking-normal text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[7rem] drop-shadow-[2px_2px_0px_#5B6D62] sm:drop-shadow-[3px_3px_0px_#5B6D62] block mt-1 md:-mt-2 lg:-mt-4 relative z-20 leading-[1] w-full break-words">Anushree</span>
-          </h3>
-          
-          <div class="text-base sm:text-lg md:text-xl font-medium space-y-4 sm:space-y-6 leading-relaxed">
-            <p>
-              Ree'ch was built by Anushree, a goal-driven creative who understands that branding isn’t just aesthetics <br class="hidden sm:block">
-              <strong class="bg-[#5B6D62] text-[#FBF5EB] px-2 py-1 rounded inline-block mt-1 sm:mt-2">it’s psychology.</strong>
-            </p>
-            <p>
-              She saw brands chasing trends, burning budgets, and still blending in. So she built something different. Ree'ch was created to help brands stand firm, speak clearly, and move with culture, not behind it.
-            </p>
-            <div class="text-xl sm:text-2xl font-serif italic text-[#5B6D62] pt-2 sm:pt-4">
-              No fluff. No fake hype. <br>Just sharp strategy and real presence.
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
   <!-- ======================== SHARED SECTIONS ======================== -->
 
   <!-- Contact Section -->
@@ -1069,7 +815,7 @@
   <footer class="bg-[#FBF5EB] text-[#5B6D62] py-10 md:py-12 px-6 border-t-4 border-[#5B6D62]">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
       
-      <div class="cursor-pointer flex flex-col items-center md:items-start" onclick="switchPage('home')">
+      <div class="cursor-pointer flex flex-col items-center md:items-start" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
         <span class="text-3xl md:text-4xl font-serif font-medium uppercase text-[#5B6D62] tracking-wide leading-none mb-1">Ree'ch</span>
         <span class="text-[0.6rem] sm:text-[0.65rem] md:text-[0.75rem] font-sans font-medium uppercase text-[#5B6D62] tracking-[0.3em] leading-none">The Social Jungle</span>
       </div>
@@ -1186,46 +932,10 @@
       }, 2500);
     });
 
-    // --- Page Routing Logic ---
-    function switchPage(page) {
-      closeMobileMenu();
-      // Instantly go to top
-      window.scrollTo({ top: 0, behavior: 'instant' });
-      
-      const homePage = document.getElementById('home-page');
-      const aboutPage = document.getElementById('about-page');
-      
-      if (page === 'home') {
-        homePage.classList.remove('hidden');
-        homePage.classList.add('block');
-        aboutPage.classList.add('hidden');
-        aboutPage.classList.remove('block');
-      } else if (page === 'about') {
-        homePage.classList.add('hidden');
-        homePage.classList.remove('block');
-        aboutPage.classList.remove('hidden');
-        aboutPage.classList.add('block');
-      }
-    }
-
     function scrollToServices() {
       closeMobileMenu();
-      const homePage = document.getElementById('home-page');
-      
-      // If we are not on the homepage, switch to it first
-      if (homePage.classList.contains('hidden')) {
-        switchPage('home');
-        // Wait a tiny bit for the DOM to render the home page before scrolling
-        setTimeout(() => {
-          // Adjust for fixed header offset
-          const y = document.getElementById('services').getBoundingClientRect().top + window.scrollY - 70;
-          window.scrollTo({top: y, behavior: 'smooth'});
-        }, 100);
-      } else {
-        // If already on homepage, just scroll
-        const y = document.getElementById('services').getBoundingClientRect().top + window.scrollY - 70;
-        window.scrollTo({top: y, behavior: 'smooth'});
-      }
+      const y = document.getElementById('services').getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({top: y, behavior: 'smooth'});
     }
 
     function scrollToContact() {
@@ -1233,7 +943,6 @@
       const y = document.getElementById('contact').getBoundingClientRect().top + window.scrollY - 70;
       window.scrollTo({top: y, behavior: 'smooth'});
     }
-    // -------------------------
 
     // Tea Modal Logic
     function openTeaModal() {
